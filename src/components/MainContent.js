@@ -1,14 +1,54 @@
 import React from 'react';
 import './MainContent.css';
+import { FaRegFileAlt } from 'react-icons/fa';
+
+function printSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+  
+  const printWindow = window.open('', '', 'width=900,height=700');
+  printWindow.document.write('<html><head><title>CV</title>');
+  
+  // Add stylesheets
+  Array.from(document.styleSheets).forEach(styleSheet => {
+    if (styleSheet.href) {
+      printWindow.document.write(`<link rel="stylesheet" href="${styleSheet.href}">`);
+    }
+  });
+  
+  printWindow.document.write('</head><body>');
+  printWindow.document.write(section.innerHTML);
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+  setTimeout(() => printWindow.close(), 1000);
+}
 
 const MainContent = () => (
   <main className="content">
     <section id="about" className="section">
       <h2>About Me</h2>
       <p>Passionate mobile developer with experience in cross-platform and native app development. I build performant, user-focused mobile solutions for both Android and iOS.</p>
+      <button
+        className="floating-download-btn"
+        onClick={() => printSection('about')}
+        aria-label="Download CV"
+      >
+        <FaRegFileAlt className="download-icon" />
+        <span>Download CV</span>
+      </button>
     </section>
     <section id="experience" className="section">
       <h2>Experience</h2>
+      <button
+        className="floating-download-btn"
+        onClick={() => printSection('experience')}
+        aria-label="Download CV"
+      >
+        <FaRegFileAlt className="download-icon" />
+        <span>Download CV</span>
+      </button>
       <div className="exp-item">
         <h3>Mobile Developer at XYZ Corp</h3>
         <span className="exp-duration">2022 - Present</span>
