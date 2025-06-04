@@ -1,0 +1,122 @@
+/* Main Content Styles */
+.content {
+    flex: 1;
+    padding: 3rem 4vw;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.section {
+  background: #23272f;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  border: 1px solid #24262b;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border: 1px solid #333;
+}
+
+.section h2 {
+  margin-bottom: 1.2rem;
+  color: #ffd600;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  position: relative;
+  display: inline-block;
+}
+.section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #ffd600;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+/* Experience */
+.exp-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-left: 2.2rem;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0.3rem;
+  width: 14px;
+  height: 14px;
+  background: #ffd600;
+  border-radius: 50%;
+  border: 2px solid #23272f;
+  z-index: 2;
+}
+.exp-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 1.15rem;
+  top: 1.2rem;
+  width: 2px;
+  height: calc(100% - 1.2rem);
+  background: #ffd600;
+  z-index: 1;
+}
+.exp-duration {
+  color: #ffd600;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 0.2rem;
+    color: #888;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+/* Projects */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.project-item {
+    background: #f7f9fb;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+.project-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+.project-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.97rem;
+}
+.project-link:hover {
+    text-decoration: underline;
+}
+/* Contact */
+.section#contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+.section#contact a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+    .content {
+        padding: 2rem 3vw;
+    }
+}
+@media (max-width: 600px) {
+    .content {
+        padding: 1rem 2vw;
+    }
+    .section {
+        padding: 1.2rem 1vw;
+    }
+}
